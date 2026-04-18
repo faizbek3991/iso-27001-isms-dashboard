@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 3000;
 
 // Security middleware (ISO 27001 A.14.1.3 - Security in development and support processes)
 app.use(helmet({
+    hsts: false, // Disable HSTS to prevent the browser from forcing HTTPS
     contentSecurityPolicy: {
         directives: {
             defaultSrc: ["'self'"],
